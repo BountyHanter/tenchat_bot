@@ -19,14 +19,14 @@ opts = webdriver.FirefoxOptions()
 opts.binary_location = binary_loc
 # Устанавливаем юзер агент
 opts.set_preference("general.useragent.override", 'useragent.random')
-driver = webdriver.Firefox(service=service, options=opts)
+driver = webdriver.Firefox(service=service, options=opts,)
 
-url_auth = "https://tenchat.ru/auth/sign-in"
+url_auth = "https://2ip.ru/"
 
 
 try:
     driver.get(url=url_auth)
-    time.sleep(1)
+    time.sleep(100)
     phone_input = driver.find_element(by='class name', value='outline-none')
     phone_input.clear()
     phone_input.send_keys(phone)
